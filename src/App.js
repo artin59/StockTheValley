@@ -1,76 +1,67 @@
-import React, { useEffect, useState } from 'react';
-import { Line } from 'react-chartjs-2';
-import axios from 'axios';
+import React from 'react';
+import './App.css';
 
-// Import necessary components and register them with chart.js
-import {
-    Chart as ChartJS,
-    CategoryScale,
-    LinearScale,
-    PointElement,
-    LineElement,
-    Title,
-    Tooltip,
-    Legend,
-} from 'chart.js';
-
-// Register components so that chart.js can recognize them
-ChartJS.register(
-    CategoryScale,
-    LinearScale,
-    PointElement,
-    LineElement,
-    Title,
-    Tooltip,
-    Legend
-);
+import artin from './Images/artin.jpg';
+import rye from './Images/rye.jpg';
+import mahir from './Images/mahir.jpg';
+import ishaan from './Images/ishaan.jpg';
+import lara from './Images/lara.jpg';
 
 function App() {
-    const [precision, setPrecision] = useState(null);
-    const [graphData, setGraphData] = useState({ dates: [], actual: [], predictions: [] });
+  return (
+   <> <div className="our-title">
+    <h1 style={{"text-align": "center"}}>Title</h1> </div>
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const result = await axios.get('http://localhost:5000/predict');
-                console.log(result.data); // Log the fetched data
-                setPrecision(result.data.precision_score);
-                setGraphData(result.data.graph_data);
-            } catch (error) {
-                console.error("Error fetching data:", error);
-            }
-        };
-        fetchData();
-    }, []);
-    
-    
+          <div className="grid-container first-row">
+              <div className="grid-item">
+                  <div className="content">
+                      <a href="https://www.linkedin.com/in/artin-kiany/" target="_blank" rel="noopener noreferrer">
+                          <h2>Artin</h2>
+                          <img src={artin} />
+                      </a>
+                  </div>
+              </div>
+              <div className="grid-item">
+                  <div className="content">
+                      <a href="https://www.linkedin.com/in/rye-wang-73b766242/" target="_blank" rel="noopener noreferrer">
+                          <h2>Rye</h2>
+                          <img src={rye} alt="Rye" />
+                      </a>
+                  </div>
+              </div>
+              <div className="grid-item">
+                  <div className="content">
+                      <a href="https://www.linkedin.com/in/mahir-tanzil-rahman/" target="_blank" rel="noopener noreferrer">
+                          <h2>Mahir</h2>
+                          <img src={mahir} alt="Mahir" />
+                      </a>
+                  </div>
+              </div>
+          </div>
 
-    const data = {
-        labels: graphData.dates,
-        datasets: [
-            {
-                label: 'Actual Prices',
-                data: graphData.actual,
-                borderColor: 'rgba(75,192,192,1)',
-                fill: false,
-            },
-            {
-                label: 'Predicted Prices',
-                data: graphData.predictions,
-                borderColor: 'rgba(255,99,132,1)',
-                fill: false,
-            },
-        ],
-    };
-    
-
-    return (
-        <div className="App">
-            <h1>Stock Market Prediction</h1>
-            <h2>Stock Prediction Precision: {precision}</h2>
-            <Line data={data} />
-        </div>
-    );
+          {/* Second row with 4 columns in a separate grid container */}
+          <div className="grid-container second-row">
+              <div className="grid-item"></div> {/* Empty space in the first column */}
+              <div className="grid-item">
+                  <div className="content">
+                      <a href="https://www.linkedin.com/in/ishaan-das-basak/" target="_blank" rel="noopener noreferrer">
+                          <h2>Ishaan</h2>
+                          <img src={ishaan} alt="Ishaan" />
+                      </a>
+                  </div>
+              </div>
+              <div className="grid-item">
+                  <div className="content">
+                      <a href="https://www.linkedin.com/in/lara-koshal-233a232b4/" target="_blank" rel="noopener noreferrer">
+                          <h2>Lara</h2>
+                          <img src={lara} alt="Lara" />
+                      </a>
+                  </div>
+              </div>
+              <div className="grid-item"></div> {/* Empty space in the fourth column */}
+          </div>
+      </>
+  );
 }
 
 export default App;
