@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/StockTheValley/static/css/main.5fb82156.css",
-    "main.js": "/StockTheValley/static/js/main.2d8bed46.js",
-    "static/js/453.336d0b13.chunk.js": "/StockTheValley/static/js/453.336d0b13.chunk.js",
-    "index.html": "/StockTheValley/index.html",
-    "main.5fb82156.css.map": "/StockTheValley/static/css/main.5fb82156.css.map",
-    "main.2d8bed46.js.map": "/StockTheValley/static/js/main.2d8bed46.js.map",
-    "453.336d0b13.chunk.js.map": "/StockTheValley/static/js/453.336d0b13.chunk.js.map"
+    "main.css": "/static/css/main.5fb82156.css",
+    "main.js": "/static/js/main.5c56daf6.js",
+    "static/js/453.336d0b13.chunk.js": "/static/js/453.336d0b13.chunk.js",
+    "index.html": "/index.html",
+    "main.5fb82156.css.map": "/static/css/main.5fb82156.css.map",
+    "main.5c56daf6.js.map": "/static/js/main.5c56daf6.js.map",
+    "453.336d0b13.chunk.js.map": "/static/js/453.336d0b13.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.5fb82156.css",
-    "static/js/main.2d8bed46.js"
+    "static/js/main.5c56daf6.js"
   ]
 }
